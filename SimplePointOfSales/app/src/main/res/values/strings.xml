@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimplePointOfSales</string>
+    <string name="name">Name</string>
+    <string name="customer_name">Customer Name </string>
+</resources>

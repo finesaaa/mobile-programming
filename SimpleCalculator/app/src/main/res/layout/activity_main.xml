@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bilangan 1"/>
+
+    <EditText
+        android:id="@+id/main_et_bil_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bilangan 2"/>
+
+    <EditText
+        android:id="@+id/main_et_bil_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/main_btn_tambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:onClick="calculate"
+            android:layout_margin="2dp"/>
+        <Button
+            android:id="@+id/main_btn_kurang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:onClick="calculate"
+            android:layout_margin="2dp"/>
+        <Button
+            android:id="@+id/main_btn_kali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:onClick="calculate"
+            android:layout_margin="2dp"/>
+        <Button
+            android:id="@+id/main_btn_bagi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":"
+            android:onClick="calculate"
+            android:layout_margin="2dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/main_tv_hasil"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="32dp"/>
+</LinearLayout>

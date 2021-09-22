@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:text="Nama Pembeli "
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvNamaPembeli"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Nama Barang "
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvNamaBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Jumlah"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvJmlBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Harga"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvHarga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Uang Bayar"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvUangBayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Total"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Kembalian"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvKembalian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Bonus"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvBonus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Bonus"
+            android:layout_marginRight="8dp" />
+        <TextView
+            android:id="@+id/tvKeterangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/tvOutput" />
+    </TableRow>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
+        android:background="@android:color/darker_gray" />
+</TableLayout>
