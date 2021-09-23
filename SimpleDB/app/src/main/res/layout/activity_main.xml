@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_default_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvNRP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NRP"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:id="@+id/etNRP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/tvNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNRP"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"
+        android:text="Nama"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/etNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/etNRP"
+        android:layout_alignBottom="@id/tvNama"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simpan"
+        android:layout_below="@id/tvNama"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp"/>
+
+    <Button
+        android:id="@+id/btnAmbilData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lihat"
+        android:layout_marginLeft="8dp"
+        android:layout_alignTop="@id/btnSimpan"
+        android:layout_toRightOf="@id/btnSimpan"
+        android:layout_toEndOf="@id/btnSimpan"/>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_marginLeft="8dp"
+        android:layout_alignTop="@id/btnAmbilData"
+        android:layout_toRightOf="@id/btnAmbilData"
+        android:layout_toEndOf="@id/btnAmbilData"/>
+
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hapus"
+        android:layout_marginLeft="8dp"
+        android:layout_alignTop="@id/btnUpdate"
+        android:layout_toRightOf="@id/btnUpdate"
+        android:layout_toEndOf="@id/btnUpdate"/>
+</RelativeLayout>
