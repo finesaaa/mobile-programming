@@ -14,18 +14,6 @@
         android:stretchColumns="1">
         <TableRow>
             <TextView
-                android:text="@string/customer_name"
-                android:textColor="@android:color/black"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/etNamaPelanggan"
-                android:layout_marginStart="8dp"
-                android:imeOptions="actionNext"
-                android:inputType="text" />
-        </TableRow>
-        <TableRow>
-            <TextView
                 android:text="Nama Barang"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"/>
@@ -59,6 +47,62 @@
                 android:inputType="number"
                 android:layout_marginStart="8dp" />
         </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/llBtnHapusKeluar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/tlInputForm"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnHapus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hapus Data"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnProses"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Proses"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/llBtnHapusKeluar"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary" />
+
+    <TableLayout
+        android:id="@+id/tlPayForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:layout_below="@id/vLine">
+        <TableRow>
+            <TextView
+                android:text="@string/customer_name"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNamaPelanggan"
+                android:layout_marginStart="8dp"
+                android:imeOptions="actionNext"
+                android:inputType="text" />
+        </TableRow>
         <TableRow>
             <TextView
                 android:text="Uang Bayar"
@@ -74,27 +118,106 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/btnProses"
+        android:id="@+id/btnBayar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tlInputForm"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Proses"
-        android:textColor="@android:color/white" />
+        android:text="Bayar"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/tlPayForm"/>
 
     <View
-        android:id="@+id/vLine"
+        android:id="@+id/vLine2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/btnProses"
-        android:background="@color/colorPrimary" />
+        android:layout_below="@id/btnBayar"
+        android:layout_marginBottom="16dp"/>
+
+    <TableLayout
+        android:id="@+id/tlKeterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vLine2"
+        android:stretchColumns="1">
+
+        <TableRow android:layout_marginBottom="6dp">
+
+            <TextView
+                android:text="Total Bayar"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="6dp">
+
+            <TextView
+                android:text="Kembalian"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKembalian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="6dp">
+
+            <TextView
+                android:text="Bonus"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:layout_marginBottom="6dp">
+
+            <TextView
+                android:text="Keterangan"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKeterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:id="@+id/vLine3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tlKeterangan"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/llBtnHapusKeluar"
-        android:layout_below="@id/vLine"
+        android:layout_below="@id/vLine3"
         android:layout_marginTop="8dp"
         android:orientation="vertical">
 
@@ -105,31 +228,4 @@
             android:orientation="vertical"
             tools:listitem="@layout/item_transaction" />
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/llBtnHapusKeluar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/btnHapus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Hapus Data"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/btnKeluar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:text="Keluar"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
 </RelativeLayout>

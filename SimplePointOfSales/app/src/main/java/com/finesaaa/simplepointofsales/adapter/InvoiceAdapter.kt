@@ -29,9 +29,12 @@ class InvoiceAdapter(): RecyclerView.Adapter<InvoiceViewHolder>() {
     return invoiceList.size
   }
 
-  fun deleteLastData() {
-    if (invoiceList.size > 0)
-      invoiceList.removeAt(invoiceList.size - 1)
+  fun clearAllData() {
+    invoiceList.clear()
+  }
+
+  fun getAllData(): ArrayList<Invoice> {
+    return invoiceList
   }
 
   fun addData(item: Invoice) {

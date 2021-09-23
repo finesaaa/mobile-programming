@@ -7,15 +7,6 @@
 
     <TableRow>
         <TextView
-            android:text="Nama Pembeli "
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvNamaPembeli"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
             android:text="Nama Barang "
             android:layout_marginRight="8dp" />
         <TextView
@@ -42,61 +33,6 @@
             android:layout_marginRight="8dp" />
         <TextView
             android:id="@+id/tvHarga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
-            android:text="Uang Bayar"
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvUangBayar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
-            android:text="Total"
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvTotal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
-            android:text="Kembalian"
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvKembalian"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
-            android:text="Bonus"
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvBonus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/tvOutput" />
-    </TableRow>
-
-    <TableRow>
-        <TextView
-            android:text="Bonus"
-            android:layout_marginRight="8dp" />
-        <TextView
-            android:id="@+id/tvKeterangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/tvOutput" />
