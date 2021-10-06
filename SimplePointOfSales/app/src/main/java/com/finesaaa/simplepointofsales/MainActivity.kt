@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity() {
   private fun getTotalPayment(invoiceList: ArrayList<Invoice>) : Double {
     var total = 0.0
     invoiceList.forEach { item ->
-      total += item.getTotal()
+      total += item.getTotalPrice()
     }
     return total
   }
