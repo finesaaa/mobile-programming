@@ -10,6 +10,7 @@ import android.os.Looper
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 
@@ -208,7 +209,8 @@ class MapsActivity : AppCompatActivity() {
     val loc = LatLng(latitude, longitude)
 
     if (this.gMap != null) {
-      this.gMap?.addMarker(MarkerOptions().position(loc).title("Lokasi Pilihan"))
+      Toast.makeText(this.applicationContext, "Lokasi Pilihan di " + loc.latitude + " : " + loc.longitude, Toast.LENGTH_LONG).show()
+      this.gMap?.addMarker(MarkerOptions().position(loc).title("Lokasi Pilihan di " + loc.latitude + " : " + loc.longitude))
       this.gMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, zoom))
     }
   }

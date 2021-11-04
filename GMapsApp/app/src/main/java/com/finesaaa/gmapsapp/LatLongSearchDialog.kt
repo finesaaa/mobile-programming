@@ -22,7 +22,7 @@ class LatLongSearchDialog(private val onClick: (Double, Double, Float) -> Unit) 
     binding = DialogSearchLatlongBinding.inflate(layoutInflater)
 
     alertDialog?.apply {
-      setTitle("Cari Lat Long")
+      setTitle("Cari Latitude Longitude")
       setView(binding?.root)
       setPositiveButton("Temukan") { dialog, _ ->
         var isValid = true
@@ -49,7 +49,7 @@ class LatLongSearchDialog(private val onClick: (Double, Double, Float) -> Unit) 
             )
           }
         } else {
-          Toast.makeText(context, "Isi isian dengan benar", Toast.LENGTH_LONG).show()
+          Toast.makeText(context, "Isian tidak valid", Toast.LENGTH_LONG).show()
         }
 
         dialog.dismiss()
