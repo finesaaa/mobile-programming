@@ -16,11 +16,13 @@ data class Product(
     return "idProduk"
   }
 
-  override fun setAllDataByCursor(cursor: Cursor) {
-    id = cursor.getLong(getColumnIndex(cursor, "id"))
-    nama = cursor.getString(getColumnIndex(cursor, "nama"))
-    harga = cursor.getDouble(getColumnIndex(cursor, "harga"))
-    jumlah = cursor.getInt(getColumnIndex(cursor, "jumlah"))
+  override fun setAllDataByCursor(cursor: Cursor): Product {
+    return Product(
+      id = cursor.getLong(getColumnIndex(cursor, "id")),
+      nama = cursor.getString(getColumnIndex(cursor, "nama")),
+      harga = cursor.getDouble(getColumnIndex(cursor, "harga")),
+      jumlah = cursor.getInt(getColumnIndex(cursor, "jumlah"))
+    )
   }
 
   override fun toMap(): Map<String, Any> {

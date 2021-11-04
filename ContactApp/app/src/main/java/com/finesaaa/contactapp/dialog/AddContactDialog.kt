@@ -5,8 +5,8 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import com.finesaaa.contactapp.ContactModel
 import com.finesaaa.contactapp.databinding.DialogAddContactBinding
+import com.finesaaa.contactapp.model.ContactModel
 
 class AddContactDialog(
   private val onPositiveClick: (contact: ContactModel?) -> Unit

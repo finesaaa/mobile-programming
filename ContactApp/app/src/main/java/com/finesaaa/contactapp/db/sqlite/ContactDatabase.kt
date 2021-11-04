@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.finesaaa.contactapp.model.Model
 
-class ContactDatabase(context: Context, private val models: ArrayList<Model>, name: String? = "contact_app", factory: SQLiteDatabase.CursorFactory? = null, version: Int = 1, errorHandler: DatabaseErrorHandler? = null ) : SQLiteOpenHelper (context, name, factory, version, errorHandler){
+class ContactDatabase(context: Context?, private val models: ArrayList<Model>, name: String? = "contact_app", factory: SQLiteDatabase.CursorFactory? = null, version: Int = 1, errorHandler: DatabaseErrorHandler? = null ) : SQLiteOpenHelper (context, name, factory, version, errorHandler){
   override fun onCreate(db: SQLiteDatabase?) {
     if (db != null) {
       models.forEach {
@@ -40,14 +40,14 @@ class ContactDatabase(context: Context, private val models: ArrayList<Model>, na
   fun <T: Model>read(model: T, id: Long?,  where: String = ""): ArrayList<T> {
     val db = this.readableDatabase
     val list = arrayListOf<T>()
-    var query = "SELECT * FROM ${model.getTableName()} "
+    var query = "SELECT * FROM ${model.getTableName()}"
 
     if (id != null) {
-      query += "WHERE ${model.getPrimaryKeyName()}='$id'"
+      query += " WHERE ${model.getPrimaryKeyName()}='$id'"
     }
 
     if (where != "") {
-      query += "$where"
+      query += " $where"
     }
 
     val cursor = db.rawQuery(query, null)

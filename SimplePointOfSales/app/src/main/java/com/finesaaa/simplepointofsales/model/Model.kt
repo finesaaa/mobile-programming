@@ -1,11 +1,12 @@
 package com.finesaaa.simplepointofsales.model
 
+import android.content.ContentValues
 import android.database.Cursor
 
 abstract class Model {
   abstract fun getTableName(): String
   abstract fun getPrimaryKeyName(): String
-  abstract fun setAllDataByCursor(cursor: Cursor)
+  abstract fun setAllDataByCursor(cursor: Cursor): Model
   abstract fun toMap(): Map<String, Any>
   abstract fun getTableAttributes(): String
 
@@ -17,4 +18,19 @@ abstract class Model {
     }
   }
 
+  fun getContentValues(): ContentValues {
+    val values = ContentValues()
+    val map = toMap()
+
+    map.forEach { (key, value) ->
+      when (value) {
+        is String -> values.put(key, value)
+        is Long -> values.put(key, value)
+        is Int -> values.put(key, value)
+        is Double -> values.put(key, value)
+      }
+    }
+
+    return  values
+  }
 }

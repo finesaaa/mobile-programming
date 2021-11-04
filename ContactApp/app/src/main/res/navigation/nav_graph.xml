@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_contact_list_fragment">
+
+    <fragment
+        android:id="@+id/nav_contact_list_fragment"
+        android:name="com.finesaaa.contactapp.ContactListFragment"
+        tools:layout="@layout/fragment_contact_list">
+        <action
+            android:id="@+id/action_nav_contact_list_to_contact_detail_fragment"
+            app:destination="@id/nav_contact_detail_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contact_detail_fragment"
+        android:name="com.finesaaa.contactapp.ContactDetailFragment"
+        tools:layout="@layout/fragment_contact_detail">
+        <action
+            android:id="@+id/action_nav_contact_detail_to_contact_list_fragment"
+            app:popUpTo="@id/nav_contact_list_fragment" />
+        <argument
+            android:name="contact"
+            android:defaultValue="@null"
+            app:argType="com.finesaaa.contactapp.model.ContactModel"
+            app:nullable="true" />
+    </fragment>
+</navigation>

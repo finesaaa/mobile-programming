@@ -43,49 +43,28 @@ class OperationsDatabase(
   }
 
   fun insert(model: Model): Long {
-    val db = this.writableDatabase
-    val contentValues = ContentValues()
-
-    model.toMap().forEach { (key, value) ->
-      when (value) {
-        is String -> contentValues.put(key, value)
-        is Long -> contentValues.put(key, value)
-        is Int -> contentValues.put(key, value)
-        is Double -> contentValues.put(key, value)
-      }
-    }
-
-    return db.insert(model.getTableName(), null, contentValues)
+    return this.writableDatabase.insert(model.getTableName(), null, model.getContentValues())
   }
 
-  fun <T: Model>read(id: Long?, model: T): ArrayList<T> {
+  fun <T: Model>read(model: T, id: Long?,  where: String = ""): ArrayList<T> {
     val db = this.readableDatabase
     val list = arrayListOf<T>()
-    var query = ""
-    val cursor: Cursor?
+    var query = "SELECT * FROM ${model.getTableName()} "
 
     if (id != null) {
-      query = "SELECT * FROM ${model.getTableName()} " + "WHERE ${model.getPrimaryKeyName()}='$id'"
+      query += "WHERE ${model.getPrimaryKeyName()}='$id'"
+    }
 
-      cursor = db.rawQuery(query, null)
-      if(cursor.count > 0) {
-        if (cursor != null) {
-          cursor.moveToFirst()
-          model.setAllDataByCursor(cursor)
-          list.add(model)
-        }
-      }
-    } else {
-      query = "SELECT * FROM ${model.getTableName()} "
+    if (where != "") {
+      query += "$where"
+    }
 
-      cursor = db.rawQuery(query, null)
-      if(cursor.count > 0) {
-        if (cursor != null) {
-          do {
-            cursor.moveToFirst()
-            list.add(model)
-          } while (cursor.moveToNext())
-        }
+    val cursor = db.rawQuery(query, null)
+    if (cursor != null && cursor.count > 0) {
+      if (cursor.moveToFirst()) {
+        do {
+          list.add(model.setAllDataByCursor(cursor) as T)
+        } while (cursor.moveToNext())
       }
     }
 
@@ -93,21 +72,9 @@ class OperationsDatabase(
   }
 
   fun update(model: Model, id: Long?): Int {
-    val db = this.writableDatabase
-    val contentValues = ContentValues()
-
-    model.toMap().forEach { (key, value) ->
-      when (value) {
-        is String -> contentValues.put(key, value)
-        is Long -> contentValues.put(key, value)
-        is Int -> contentValues.put(key, value)
-        is Double -> contentValues.put(key, value)
-      }
-    }
-
-    return db.update(
+    return this.writableDatabase.update(
       model.getTableName(),
-      contentValues,
+      model.getContentValues(),
       "${model.getPrimaryKeyName()} = $id",
       null
     )

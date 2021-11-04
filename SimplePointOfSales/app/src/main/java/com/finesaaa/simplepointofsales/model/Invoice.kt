@@ -19,14 +19,16 @@ data class Invoice(
     return "idPembayaran"
   }
 
-  override fun setAllDataByCursor(cursor: Cursor) {
-    idPembayaran = cursor.getLong(getColumnIndex(cursor, "idPembayaran"))
-    idPelanggan = cursor.getLong(getColumnIndex(cursor, "idPelanggan"))
-    uangBayar = cursor.getDouble(getColumnIndex(cursor, "uangBayar"))
-    totalPembelian = cursor.getDouble(getColumnIndex(cursor, "totalPembelian"))
-    kembalian = cursor.getDouble(getColumnIndex(cursor, "kembalian"))
-    bonus = cursor.getString(getColumnIndex(cursor, "bonus"))
-    keterangan = cursor.getString(getColumnIndex(cursor, "keterangan"))
+  override fun setAllDataByCursor(cursor: Cursor): Invoice {
+    return Invoice (
+          idPembayaran = cursor.getLong(getColumnIndex(cursor, "idPembayaran")),
+          idPelanggan = cursor.getLong(getColumnIndex(cursor, "idPelanggan")),
+          uangBayar = cursor.getDouble(getColumnIndex(cursor, "uangBayar")),
+          totalPembelian = cursor.getDouble(getColumnIndex(cursor, "totalPembelian")),
+          kembalian = cursor.getDouble(getColumnIndex(cursor, "kembalian")),
+          bonus = cursor.getString(getColumnIndex(cursor, "bonus")),
+          keterangan = cursor.getString(getColumnIndex(cursor, "keterangan"))
+        )
   }
 
   override fun toMap(): Map<String, Any> {

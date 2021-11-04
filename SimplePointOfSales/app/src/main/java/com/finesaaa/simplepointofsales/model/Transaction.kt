@@ -15,16 +15,24 @@ data class Transaction(
     return "idTransaksi"
   }
 
-  override fun setAllDataByCursor(cursor: Cursor) {
-    TODO("Not yet implemented")
+  override fun setAllDataByCursor(cursor: Cursor): Model {
+    return Transaction(
+      idTransaksi = cursor.getLong(getColumnIndex(cursor, "idTransaksi")),
+      idPembayaran = cursor.getLong(getColumnIndex(cursor, "idPembayaran")),
+      idProduk = cursor.getLong(getColumnIndex(cursor, "idProduk"))
+    )
   }
 
   override fun toMap(): Map<String, Any> {
-    TODO("Not yet implemented")
+    return mapOf(
+      "idTransaksi" to idTransaksi,
+      "idProduk" to idProduk
+    )
   }
 
   override fun getTableAttributes(): String {
-    TODO("Not yet implemented")
+    return "${getTableName()} (${getPrimaryKeyName()} INTEGER PRIMARY KEY, " +
+        "idPembayaran INTEGER, idProduk INTEGER)"
   }
 
 }

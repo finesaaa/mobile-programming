@@ -117,21 +117,39 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/btnBayar"
+    <LinearLayout
+        android:id="@+id/llBtnLihatBayar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Bayar"
-        android:textColor="@android:color/white"
-        android:layout_below="@id/tlPayForm"/>
+        android:layout_below="@id/tlPayForm"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnLihat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lihat Data"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnBayar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:text="Bayar"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
 
     <View
         android:id="@+id/vLine2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/btnBayar"
+        android:layout_below="@id/llBtnLihatBayar"
         android:layout_marginBottom="16dp"/>
 
     <TableLayout

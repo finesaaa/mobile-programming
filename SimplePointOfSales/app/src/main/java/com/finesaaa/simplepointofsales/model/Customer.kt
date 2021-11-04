@@ -14,9 +14,11 @@ data class Customer (
     return "idPelanggan"
   }
 
-  override fun setAllDataByCursor(cursor: Cursor) {
-    idPelanggan = cursor.getLong(getColumnIndex(cursor, "idPelanggan"))
-    nama = cursor.getString(getColumnIndex(cursor, "nama"))
+  override fun setAllDataByCursor(cursor: Cursor): Customer {
+    return Customer(
+      idPelanggan = cursor.getLong(getColumnIndex(cursor, "idPelanggan")),
+      nama = cursor.getString(getColumnIndex(cursor, "nama"))
+    )
   }
 
   override fun toMap(): Map<String, Any> {

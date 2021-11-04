@@ -1,13 +1,14 @@
-package com.finesaaa.contactapp
+package com.finesaaa.contactapp.model
 
 import android.database.Cursor
 import com.finesaaa.contactapp.model.Model
+import java.io.Serializable
 
 data class ContactModel(
   var id_kontak: Long = 0L,
   var nama: String = "",
   var telepon: String = ""
-): Model() {
+): Model(), Serializable {
   override fun getTableName(): String {
     return "contact"
   }
