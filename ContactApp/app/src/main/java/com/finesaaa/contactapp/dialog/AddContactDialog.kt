@@ -9,7 +9,7 @@ import com.finesaaa.contactapp.databinding.DialogAddContactBinding
 import com.finesaaa.contactapp.model.ContactModel
 
 class AddContactDialog(
-  private val onPositiveClick: (contact: ContactModel?) -> Unit
+  private val params: AddContactDialogParams
 ) : DialogFragment() {
 
   var binding: DialogAddContactBinding? = null
@@ -23,6 +23,11 @@ class AddContactDialog(
   override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
     binding = DialogAddContactBinding.inflate(layoutInflater)
 
+    if (params.data != null) {
+      binding?.dialogAcTilName?.editText?.setText(params.data?.nama)
+      binding?.dialogAcTilNum?.editText?.setText(params.data?.telepon)
+    }
+
     alertDialog?.apply {
       setView(binding?.root)
       setPositiveButton("Tambahkan") { dialog, _ ->
@@ -30,9 +35,9 @@ class AddContactDialog(
           binding?.dialogAcTilName?.editText?.text.toString().isEmpty()
           || binding?.dialogAcTilNum?.editText?.text.toString().isEmpty()
         ) {
-          onPositiveClick(null)
+          params.onPositiveClick(null)
         } else {
-          onPositiveClick(
+          params.onPositiveClick(
             ContactModel(
               nama = binding?.dialogAcTilName?.editText?.text.toString(),
               telepon = binding?.dialogAcTilNum?.editText?.text.toString()
