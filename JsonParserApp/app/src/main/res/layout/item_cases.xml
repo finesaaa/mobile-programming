@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/item_c_rl"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="8dp">
+
+  <ImageView
+      android:id="@+id/item_c_iv"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
+      android:layout_marginEnd="16dp"/>
+
+  <TextView
+    android:id="@+id/item_c_tv_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_toEndOf="@id/item_c_iv"
+    android:text="Negara"
+    android:textColor="@android:color/black"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/item_c_tv_num"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/item_c_tv_name"
+      android:layout_toEndOf="@id/item_c_iv"
+      android:text="Jumlah Kasus"
+      android:textSize="14sp" />
+</RelativeLayout>
